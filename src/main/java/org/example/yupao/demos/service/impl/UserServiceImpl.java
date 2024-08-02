@@ -1,13 +1,12 @@
-package org.example.usercenter.demos.service.impl;
-import java.util.Date;
+package org.example.yupao.demos.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.example.usercenter.demos.mapper.UserMapper;
-import org.example.usercenter.demos.model.domain.User;
-import org.example.usercenter.demos.service.UserService;
+import org.example.yupao.demos.mapper.UserMapper;
+import org.example.yupao.demos.model.domain.User;
+import org.example.yupao.demos.service.UserService;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
@@ -16,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.example.usercenter.demos.contant.UserConstant.USER_LOGIN_STATE;
+import static org.example.yupao.demos.contant.UserConstant.USER_LOGIN_STATE;
 
 /**
 * @author rainsXZ

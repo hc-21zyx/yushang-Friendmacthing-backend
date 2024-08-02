@@ -1,4 +1,4 @@
-package org.example.usercenter.demos.service;
+package org.example.yupao.demos.service;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

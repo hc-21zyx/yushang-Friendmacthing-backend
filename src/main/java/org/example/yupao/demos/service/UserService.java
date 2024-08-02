@@ -1,7 +1,7 @@
-package org.example.usercenter.demos.service;
+package org.example.yupao.demos.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.example.usercenter.demos.model.domain.User;
+import org.example.yupao.demos.model.domain.User;
 
 import javax.servlet.http.HttpServletRequest;
 

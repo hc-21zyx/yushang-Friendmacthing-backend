@@ -1,8 +1,8 @@
-package org.example.usercenter.demos.mapper;
+package org.example.yupao.demos.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
-import org.example.usercenter.demos.model.domain.User;
+import org.example.yupao.demos.model.domain.User;
 
 /**
 * @author rainsXZ

@@ -1,4 +1,4 @@
-package org.example.usercenter.demos.model.domain;
+package org.example.yupao.demos.model.domain;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;

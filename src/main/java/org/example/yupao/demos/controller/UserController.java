@@ -1,11 +1,11 @@
-package org.example.usercenter.demos.controller;
+package org.example.yupao.demos.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.apache.commons.lang3.StringUtils;
-import org.example.usercenter.demos.model.domain.User;
-import org.example.usercenter.demos.model.domain.request.UserLoginRequest;
-import org.example.usercenter.demos.model.domain.request.UserRegisterRequest;
-import org.example.usercenter.demos.service.UserService;
+import org.example.yupao.demos.model.domain.User;
+import org.example.yupao.demos.model.domain.request.UserLoginRequest;
+import org.example.yupao.demos.model.domain.request.UserRegisterRequest;
+import org.example.yupao.demos.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.example.usercenter.demos.contant.UserConstant.ADMIN_ROLE;
-import static org.example.usercenter.demos.contant.UserConstant.USER_LOGIN_STATE;
+import static org.example.yupao.demos.contant.UserConstant.ADMIN_ROLE;
+import static org.example.yupao.demos.contant.UserConstant.USER_LOGIN_STATE;
 
 @RestController
 @RequestMapping("user/")

@@ -1,4 +1,4 @@
-package org.example.usercenter.demos.contant;
+package org.example.yupao.demos.contant;
 
 /**
  * 用户常量

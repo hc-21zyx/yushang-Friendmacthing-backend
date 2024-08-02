@@ -98,7 +98,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>org.example.usercenter.demos.UserCenterApplication</mainClass>
+                    <mainClass>org.example.yupao.demos.UserCenterApplication</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>

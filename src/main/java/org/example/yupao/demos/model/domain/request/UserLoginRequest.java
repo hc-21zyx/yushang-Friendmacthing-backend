@@ -1,4 +1,4 @@
-package org.example.usercenter.demos.model.domain.request;
+package org.example.yupao.demos.model.domain.request;
 
 import lombok.Data;
 
