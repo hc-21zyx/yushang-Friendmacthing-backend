@@ -61,7 +61,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         //账户不能重复
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("userAccount",userAccount);
-        long count = this.count(queryWrapper);
+        long count = userMapper.selectCount(queryWrapper);
 
         if (count > 0) {
             return -1;
