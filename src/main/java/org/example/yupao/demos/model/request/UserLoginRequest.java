@@ -1,4 +1,4 @@
-package org.example.yupao.demos.model.domain.request;
+package org.example.yupao.demos.model.request;
 
 import lombok.Data;
 
@@ -9,14 +9,11 @@ import java.io.Serializable;
  * @author yupi
  */
 @Data
-public class UserRegisterRequest implements Serializable {
+public class UserLoginRequest implements Serializable {
     private static final long serialVersionUID = 319124171637120793L;
 
     private String userAccount;
 
     private String userPassword;
 
-    private String checkPassword;
-
-    private String PlanetCode;
 }
