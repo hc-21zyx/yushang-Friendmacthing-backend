@@ -1,25 +1,25 @@
 package org.example.yupao.demos.exception;
 
+import lombok.Getter;
 import org.example.yupao.demos.common.ErrorCode;
 
 /**
  * 业务异常
  */
-
 public class BusinessException extends RuntimeException {
     private final int code;
 
     private final String description;
 
-    public BusinessException(String message,int code,String descripiton) {
+    public BusinessException(String message,int code,String description) {
         super(message);
         this.code = code;
-        this.description = descripiton;
+        this.description = description;
     }
 
     public BusinessException(ErrorCode errorCode) {
         super(errorCode.getMessage());
-        this.code = errorCode.  getCode();
+        this.code = errorCode.getCode();
         this.description = errorCode.getDescription();
     }
 
@@ -36,4 +36,5 @@ public class BusinessException extends RuntimeException {
     public String getDescription() {
         return description;
     }
+
 }

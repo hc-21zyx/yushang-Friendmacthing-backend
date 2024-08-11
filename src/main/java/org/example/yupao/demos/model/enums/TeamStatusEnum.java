@@ -16,8 +16,6 @@ public enum TeamStatusEnum {
 
     private String text;
 
-    // 原_创 [鱼_皮](https://github.com/liyupi)
-
     public static TeamStatusEnum getEnumByValue(Integer value) {
         if (value == null) {
             return null;
