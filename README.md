@@ -1,4 +1,4 @@
-# Yushang 用户管理平台
+# Yushang 好友匹配平台
 
 # 简介
 
@@ -9,7 +9,7 @@
 # 主要技术栈
 
 ```
-Mybatis + Mysql + MybatisPlus + SpringMVC + SpringBoot + AntDesginPro
+Mybatis + Mysql + MybatisPlus + SpringMVC + SpringBoot + Vue + Redis + JUC
 ```
 
 # 分层开发
