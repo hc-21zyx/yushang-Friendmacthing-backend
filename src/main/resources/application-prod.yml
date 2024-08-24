@@ -1,0 +1,14 @@
+# 线上配置文件
+# 注意开源时这个文件不要提交、或者不要填真实配置
+spring:
+  # DataSource Config
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yupao
+    username: root
+    password: 123456
+  # session 失效时间
+  session:
+    timeout: 86400
+server:
+  address: 0.0.0.0
