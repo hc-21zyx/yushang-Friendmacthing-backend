@@ -1,6 +1,9 @@
 package com.yupi.yupao.service;
+import java.util.Date;
 
+import com.yupi.yupao.mapper.UserMapper;
 import com.yupi.yupao.model.domain.User;
+import javafx.scene.paint.Stop;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.StopWatch;
@@ -13,17 +16,16 @@ import java.util.concurrent.*;
 /**
  * 导入用户测试
  *
- * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
- * @from <a href="https://yupi.icu">编程导航知识星球</a>
  */
 @SpringBootTest
 public class InsertUsersTest {
 
     @Resource
+    private UserMapper userMapper;
+    @Resource
     private UserService userService;
 
     private ExecutorService executorService = new ThreadPoolExecutor(40, 1000, 10000, TimeUnit.MINUTES, new ArrayBlockingQueue<>(10000));
-
     /**
      * 批量插入用户
      */
@@ -31,25 +33,23 @@ public class InsertUsersTest {
     public void doInsertUsers() {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
-        final int INSERT_NUM = 100000;
-        List<User> userList = new ArrayList<>();
-        for (int i = 0; i < INSERT_NUM; i++) {
+        for (int i = 1;i <= 100;i ++) {
             User user = new User();
-            user.setUsername("原_创 【鱼_皮】https://t.zsxq.com/0emozsIJh");
-            user.setUserAccount("fakeyupi");
+            user.setUsername("友好用户");
+            user.setUserAccount("YUX");
             user.setAvatarUrl("https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/logo.png");
             user.setGender(0);
             user.setUserPassword("12345678");
-            user.setPhone("123");
-            user.setEmail("123@qq.com");
-            user.setTags("[]");
+            user.setPhone("");
+            user.setEmail("");
+            user.setTags("");
             user.setUserStatus(0);
+            user.setCreateTime(new Date());
+            user.setUpdateTime(new Date());
+            user.setIsDelete(0);
             user.setUserRole(0);
-            user.setPlanetCode("11111111");
-            userList.add(user);
+            userMapper.insert(user);
         }
-        // 20 秒 10 万条
-        userService.saveBatch(userList, 10000);
         stopWatch.stop();
         System.out.println(stopWatch.getTotalTimeMillis());
     }
@@ -70,9 +70,9 @@ public class InsertUsersTest {
             while (true) {
                 j++;
                 User user = new User();
-                user.setUsername("假鱼皮");
-                user.setUserAccount("fakeyupi");
-                user.setAvatarUrl("https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/logo.png");
+                user.setUsername("KunKun");
+                user.setUserAccount("YUX");
+                user.setAvatarUrl("https://pic.code-nav.cn/user_avatar/1716249269226303490/thumbnail/l4qEaMHi-%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-05-22%20102938.png");
                 user.setGender(0);
                 user.setUserPassword("12345678");
                 user.setPhone("123");
@@ -86,13 +86,14 @@ public class InsertUsersTest {
                     break;
                 }
             }
-            // 异步执行
+            // 异步执行 (运行在此会直接开一个线程)
             CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
                 System.out.println("threadName: " + Thread.currentThread().getName());
                 userService.saveBatch(userList, batchSize);
             }, executorService);
             futureList.add(future);
         }
+        //防止线程还没运行玩
         CompletableFuture.allOf(futureList.toArray(new CompletableFuture[]{})).join();
         // 20 秒 10 万条
         stopWatch.stop();
